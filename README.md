@@ -19,3 +19,7 @@ SUBCOMMANDS:
 To get help information about a specific subcommand, use `cf-linux <subcommand> --help`
 
 ## Installation
+Make sure you have the [Rust toolchain](https://www.rust-lang.org/tools/install) installed 
+```
+cargo install cf-linux
+```
