@@ -7,7 +7,7 @@ description = "cf-linux is a project to bring CurseForge modpacks to Linux"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/TheDutchMC/cf-linux"
 homepage = "https://github.com/TheDutchMC/cf-linux"
-readme = "REAMDE.md"
+readme = "README.md"
 keywords = ["curseforge", "minecraft", "linux"]
 categories = ["api-bindings", "games"]
 
