@@ -63,14 +63,14 @@ fn main() {
 }
 
 fn app() -> clap::App<'static, 'static> {
-    use clap::{Arg, App, SubCommand};
+    use clap::{Arg, App};
 
     App::new(env!("CARGO_PKG_NAME"))
         .version(env!("CARGO_PKG_VERSION"))
         .about(env!("CARGO_PKG_DESCRIPTION"))
         .author(env!("CARGO_PKG_AUTHORS"))
-        .subcommand(SubCommand::with_name("install")
-            .help("Install a new modpack")
+        .subcommand(App::new("install")
+            .about("Install a new modpack")
             .arg(Arg::with_name("zip")
                 .takes_value(true)
                 .required(true)
@@ -81,17 +81,17 @@ fn app() -> clap::App<'static, 'static> {
                 .short("o")
                 .long("skip-optional")
                 .help("Should optional mods be skipped")))
-        .subcommand(SubCommand::with_name("list")
-            .help("List the modpacks you have installed"))
-        .subcommand(SubCommand::with_name("mods")
-            .help("List the mods installed in a modpack")
+        .subcommand(App::new("list")
+            .about("List the modpacks you have installed"))
+        .subcommand(App::new("mods")
+            .about("List the mods installed in a modpack")
             .arg(Arg::with_name("index")
                 .help("The index of the modpack. Use `list` to see what index you should use")
                 .takes_value(true)
                 .required(true)
                 .value_name("modpack index")))
-        .subcommand(SubCommand::with_name("run")
-            .help("Run a modpack")
+        .subcommand(App::new("run")
+            .about("Run a modpack")
             .arg(Arg::with_name("index")
                 .help("The index of the modpack. Use `list` to see what index you should use")
                 .takes_value(true)
